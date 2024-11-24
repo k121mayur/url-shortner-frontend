@@ -20,10 +20,10 @@ function App() {
       }
       string = 'https://' + string;
 
-      new URL(string); // Validate the constructed URL
-      return string;   // Return the valid URL
-    } } catch (err) {
-      return false;    // If invalid, return false
+      new URL(string);
+      return string;  
+    } else return string;} catch (err) {
+      return false;  
     }
   
 }
@@ -62,7 +62,6 @@ function App() {
         { url.trim() && !loading && <Button variant="success" className='m-2' onClick={shortUrlFunction}>Submit</Button> }
         { loading && <Spinner animation="border" variant="success" className='m-4' style={{height: '50px', width: '50px', borderWidth: '5px'}} /> }
         { shortUrl && <a href={shortUrl} target="_blank"><h3 className='text-center text-dark m-5'>{shortUrl}</h3></a>}
-
       </div>
     </>
   )
