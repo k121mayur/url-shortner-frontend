@@ -13,10 +13,10 @@ function App() {
 
   async function isValidUrl(string) {
     try {
-      // Check if the string starts with 'http://' or 'https://'
+      
       if (!string.startsWith('http://') && !string.startsWith('https://')) {
-        if (!string.startsWith('www')) {
-          string = 'www.' + string; // Prepend 'https://'
+        if (!string.startsWith('www.')) {
+          string = 'www.' + string; 
       }
       string = 'https://' + string;
 
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center flex-column border m-0" style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHBbwq2Cbi7NOdshoiIDwxHevDtokbvp_5wg&s" className="col-lg-6 col-sm-10 col-md-8 border border-light shadow rounded-3" alt="logo" style={{width: '100px', height: '100px'}}/>
+        <img src="/images/logo.png" className="col-lg-6 col-sm-10 col-md-8 border border-light shadow rounded-3" alt="logo" style={{width: '100px', height: '100px'}}/>
         <h1 className='text-center text-dark m-5'> Short is Sweet </h1>
         <input type="text" className="col-lg-6 col-sm-10 col-md-8 col-10 border border-light shadow rounded-3" style={{height: '50px'}} placeholder="Enter your URL" value={url} onChange={(e) => setUrl(e.target.value.trim())} />
         { url.trim() && !loading && <Button variant="success" className='m-2' onClick={shortUrlFunction}>Submit</Button> }
